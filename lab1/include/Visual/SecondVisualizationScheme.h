@@ -4,18 +4,18 @@
 namespace Visual
 {
 
-	class FirstVisualizationScheme : public AVisualizationScheme
+	class SecondVisualizationScheme : public AVisualizationScheme
 	{
 	public:
-		FirstVisualizationScheme(IVisualizer* visualizer) : AVisualizationScheme(visualizer) {};
+		SecondVisualizationScheme(IVisualizer* visualizer) : AVisualizationScheme(visualizer) {};
 		void DrawLineralizedSegment(Geometry::IPoint* p1, Geometry::IPoint* p2) {
 			visualizer->DrawLine(p1, p2);
 		}
 		void DrawStartPoint(Geometry::IPoint* p) {
-			visualizer->DrawCircle(p, 4);
+			visualizer->DrawCircle(p, 5);
 		}
 		void DrawEndPoint(Geometry::IPoint* p) {
-			visualizer->DrawCircle(p, 4);
+			visualizer->DrawCircle(p, 2);
 		}
 	};
 

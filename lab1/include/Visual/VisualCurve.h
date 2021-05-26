@@ -6,9 +6,18 @@
 namespace Visual
 {
 
-	class VisualCurve : public Geometry::ICurve, public IDrawable {
+	class VisualCurve final : public Geometry::ICurve, public IDrawable {
+		Geometry::ICurve* curve;
+		int n;
+
+		void GetPoint(double t, Geometry::IPoint* p) override {
+			curve->GetPoint(t, p);
+		}
 	public:
-		void Draw(IVisualizationScheme* context, int n) override {
+		VisualCurve() = delete;
+		VisualCurve(Geometry::ICurve* curve, int n) : curve(curve), n(n) {}
+		
+		void Draw(IVisualizationScheme* context) override {
 			for (int i = 0; i <= n - 1; i++) {
 				Geometry::Point p1;
 				Geometry::Point p2;

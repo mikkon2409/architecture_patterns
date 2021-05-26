@@ -6,7 +6,7 @@ namespace Visual
 
 	class IDrawable {
 	public:
-		virtual void Draw(IVisualizationScheme* context, int n) = 0;
+		virtual void Draw(IVisualizationScheme* context) = 0;
 	};
 
 }
